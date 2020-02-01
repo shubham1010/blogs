@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>My Vectors</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Blog-1</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="https://shubham1010.github.io/about-myself/">About</a></li>
+						<!--	<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Vectors of STL in CPP</h1>
+							<span class="image main"><img src="images/cpp.jpg" alt="" /></span>
+							<p><li>Vectors of STL</li>This article is about Vectors of STL in CPP. I'm going to write my own vector, so this blog is nothing but discussion I'm going to talk about which problems face while implementing?, How they resolve? What questions are arises during implementation? Why to use specific datatype for some attributes and methods?</p>
+							<p>If you are a beginnier to learn about vector of CPP and if you are not familier with CPP you should go through below quetions:<br>
+							   1) What is STL in CPP?<br>
+							   2) What are vectors in CPP?<br>
+							   3) How to use vectors in CPP?<br>
+							   4) Why to use vectors?
+							   5) What are the methods of vector? 
+							</p>
+							<p> After getting answers of above questions you may understand about vector is not only for a specific type it is for generic type so the next question arises that how to make function or methods of class with generic types? Here comes the role of templates in CPP. So now you have to learn about:<br>
+							1) What are templates?
+							2) How to use in CPP?
+							</p>
+						  	<p>
+							If you learned all above things then now it is very easy to implements own's vector.<br>
+							While implementation of push_back() method of the vector if vector size(number of elements pushed into vector) is equal to capacity(number of elements can store into vector) of the vector then what we do is increasing the capacity of the vector by 1 this leads to the problems why? Stay Tune.
+							<p> For example, at capacity=1 to push an element create a new vector of capacity 2 and copy all the old array elements to new vector and at the end add the new element. At capacity=2, to push an element create a new vector of capcaity 3 and copy all the old vector elements to new vector and at the end add the new element. Simillarly, at n=n-1, if we want to push an elements create a new vector of capacity of 'n' and the same other stuff. After 'n' push operations the total time T(n) (number of copy operations) is proportional to 1 + 2 + ... + n = O(n*n)<br> Lets improve the complexity by using vector doubling technique. If the vector capacity is full, create new vector of twice the size, and copy items. With this approach, pushing 'n' items takes time proportional to O(n) (not n*n), How?<br>Lets us assume that initially we started with capacity=1 and moved till capacity=32. That means, we do the doubling at 1,2,4,8,16. At capacity=1, we do 1 copy operation, at capacity=2, we do 2 copy operations, and capacity=4, we do 4 copy operations and so on. By the time we reach n=32, the total number of copy operations is 1+2+4+8+16 = 31, which is approximately equal to 2n value(32). If we observe carefully, we are doing the doubling operation log(n)(base 2) times. For n push operations we double the vector capacity log(n) (base 2) times. That means, we will have log(n) terms in the expression below. The total time T(n) of a series of n push operations is proportional to <br> 1 + 2 + 4 + 8 + ... + (n/4) + (n/2) + (n) = n + (n/2) + (n/4) + (n/8) + ... + 4 + 2 + 1<br>= n (1 + 1/2 + 1/4 + 1/8 + ... + 4/n + 2/n + 1/n)<br>= n(2) = 2n = O(n)<br>
+							So a conclusion is after n push operations the total time T(n) (number of copy operations) is proportional to O(n).
+							</p>
+							<P>
+							Now you know that you are done with implementation but the best way to prove what you have implemented is correct then you should have to test the function or your program with passing large numbers of inputs with different arguments so do testing is more important before you are contribute into working/running product. You should have to always keep in mind that before handovering anything your program will not crashes the system.
+							</p>
+							<p>Implementing vector was not a hard task but you should know certain things before start implementation that why this blogs helps you write your own vectors.<br>Thank You</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://github.com/shubham1010" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+					
+																		<li><a href="https://www.linkedin.com/in/shubham-jagdhane/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Shubham Jagdhane. All rights reserved</li><li>These blogs is written for fun. </li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
