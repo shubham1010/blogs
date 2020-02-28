@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Balanced Binary Search Trees</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Blog-3</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="https://shubham1010.github.io/about-myself/">About</a></li>
+						<!--	<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Balanced Binary Search Trees</h1>
+							<span class="image main"><img src="images/perfectBinaryTree.png" alt="" /></span>
+							<p><li>Balanced Binary Search Trees</li>This article is about Balanced Binary Search Trees. This blogs covers, What are balanced binary search trees? Why they are important? What problems they resolves? How they are better over binary search tree? and How to implement them?</p> 
+							<p>Prerequisite:<br>
+							   Binary Search Tree(BST).<br>
+							</p>
+							<p> We all know about Binary Search Tree. We expect operations like Insertion,Searching data i.e. finding predecessor and successor and Deletion should get done in O(lg(n)) time where 'n' is total number of nodes. But in worst case of Binary Search Tree some BST are skew as showed in below figure:<br>
+							<span class="image main"><img src="images/skewBinaryTree.png" alt="" /></span>
+							</p>
+							<p>
+								In skew BST complexity not remains O(lg(n)) for operations as all nodes are either tilted toward left or right side of a node, Here Balanced Binary Search Trees comes in picture. What are balanced binary search trees? They are <a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree">lots of self-balanced binary tree </a> in this blog I'm going to talk about <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL</a> (Adelson, Velskii, and Landi) Tree.
+							</p>
+							<p>We called the tree balanced if height h is O(lg(n)).<br>Defination of Height: Length of the longest path always going down i.e. length of longest path from root to the some leaf. Comparision of height between balanced and unbalanced tree BST is shown in the below image:
+							<span class="image main"><img src="images/balancedVsNonBalanced.png" alt="" /></span><br>
+							Now the question should ask is how do we compute the height of a node???<br> Take max of the height of the children add 1.
+						    Height of a node = max(height(leftChild),height(rightChild)) + 1<br>
+							Depth of a single node is to be -1. Why -1? => Because the above formula works. Like leaves for example, have two childrens, which are -1 you take the max you add 1 and you get 0 so that just make things works out..
+							</p>
+							<p>Require height of left and right children of every node to differ by at most +1 or -1. For every node, lets make the right side have a height of one larger than the left side.<br>
+							<span class="image main"><img src="images/heightDifferBy1.jpg" alt="" /></span><br>
+							Let Nh = minimum number of nodes in an AVL Tree of height h then height of AVL is obtained by using 'n' nodes should be:<br>
+							<span class="image main"><img src="images/minimumHeight.jpg" alt="" /></span><br>
+							</p>
+							<p>AVL Insertion:<br>
+								1) Simple BST insert.<br>
+								2) Fix AVL property from changed node up.<br>
+								How to fix AVL property? ====> By Rotations(constant time operation).
+							<br><span class="image main"><img src="images/rotations.jpg" alt="" /></span><br>
+								Suppose X is lowest node violating AVL. Assume right(X) is higher.
+							<br><span class="image main"><img src="images/twoCases.jpg" alt="" /></span><br>
+								Why we looking at the right child? Because we assumed that the right one is higher. In the above figure 'K' represent height of node X. As it is right heavy so Y becomes 'K-1' and so C is 'K-2', node A is 'K-3' because we assumed right heavy is differ by 2.
+
+								
+
+							</p>
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://github.com/shubham1010" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+					
+																		<li><a href="https://www.linkedin.com/in/shubham-jagdhane/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Shubham Jagdhane. All rights reserved</li><li>These blogs is written for fun. </li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
