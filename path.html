@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>$PATH</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Blog-2</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="https://shubham1010.github.io/about-myself/">About</a></li>
+						<!--	<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>PATH- The Environmental Variable in Linux</h1>
+							<span class="image main"><img src="images/path.jpg" alt="" /></span>
+							<p><li>$PATH</li>
+							This article about the $PATH- The environment varible in linux.
+							</p>
+							<p> Many time when you type commands in terminal like sudo, ls, cd, cat etc. Have you ever thought How does it know where to find that binary? How they get searched? Where those are located? This blog covers all those answer.
+							</p>
+							<p> 
+							Answers to all those question is $PATH, $PATH is an environmental variable. If you type echo $PATH you will see result as similler to below picture:
+							<br><span class="image main"><img src="images/pathCommand.png" alt="" /></span><br>
+							You can see that it's a colon seperated listing of directories, these are the directories and in this order bash is going to go through and check each one to see if this has a command which is executed, so it start checking from left to right and get stop after found in any of those directory it's going to return that and execute it. You can check path of each command where it is located by using "which"	command.
+							<br><span class="image main"><img src="images/whichCommand.png" alt="" /></span><br>
+							</p>
+						  	<p>
+							<li>Prepending and Appending to $PATH</li>
+								Open you shell<br>For Appending type => PATH=$PATH:/dir/name<br> For Prepending type => PATH=$PATH:/dir/name<br> But when you logged out everything you set will going back to its original state because we didn't exporting the PATH. The place you hard code something like this is in ~/.bash_profile file. I have exported the PATH for golang binaries you can see how is appended:
+							<br><span class="image main"><img src="images/golangBins.png" alt="" /></span><br>
+							</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://github.com/shubham1010" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+					
+																		<li><a href="https://www.linkedin.com/in/shubham-jagdhane/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Shubham Jagdhane. All rights reserved</li><li>These blogs is written for fun. </li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
