@@ -47,35 +47,35 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Balanced Binary Search Trees</h1>
-							<span class="image main"><img src="images/perfectBinaryTree.png" alt="" /></span>
+							<span class="image main"><img src="images/balancedBinaryTrees/perfectBinaryTree.png" alt="" /></span>
 							<p><li>Balanced Binary Search Trees</li>This article is about Balanced Binary Search Trees. This blogs covers, What are balanced binary search trees? Why they are important? What problems they resolves? How they are better over binary search tree? and How to implement them?</p> 
 							<p>Prerequisite:<br>
 							   Binary Search Tree(BST).<br>
 							</p>
 							<p> We all know about Binary Search Tree. We expect operations like Insertion,Searching data i.e. finding predecessor and successor and Deletion should get done in O(lg(n)) time where 'n' is total number of nodes. But in worst case of Binary Search Tree some BST are skew as showed in below figure:<br>
-							<span class="image main"><img src="images/skewBinaryTree.png" alt="" /></span>
+							<span class="image main"><img src="images/balancedBinaryTrees/skewBinaryTree.png" alt="" /></span>
 							</p>
 							<p>
 								In skew BST complexity not remains O(lg(n)) for operations as all nodes are either tilted toward left or right side of a node, Here Balanced Binary Search Trees comes in picture. What are balanced binary search trees? They are <a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree">lots of self-balanced binary tree </a> in this blog I'm going to talk about <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL</a> (Adelson, Velskii, and Landi) Tree.
 							</p>
 							<p>We called the tree balanced if height h is O(lg(n)).<br>Defination of Height: Length of the longest path always going down i.e. length of longest path from root to the some leaf. Comparision of height between balanced and unbalanced tree BST is shown in the below image:
-							<span class="image main"><img src="images/balancedVsNonBalanced.png" alt="" /></span><br>
+							<span class="image main"><img src="images/balancedBinaryTrees/balancedVsNonBalanced.png" alt="" /></span><br>
 							Now the question should ask is how do we compute the height of a node???<br> Take max of the height of the children add 1.
 						    Height of a node = max(height(leftChild),height(rightChild)) + 1<br>
 							Depth of a single node is to be -1. Why -1? => Because the above formula works. Like leaves for example, have two childrens, which are -1 you take the max you add 1 and you get 0 so that just make things works out..
 							</p>
 							<p>Require height of left and right children of every node to differ by at most +1 or -1. For every node, lets make the right side have a height of one larger than the left side.<br>
-							<span class="image main"><img src="images/heightDifferBy1.jpg" alt="" /></span><br>
+							<span class="image main"><img src="images/balancedBinaryTrees/heightDifferBy1.jpg" alt="" /></span><br>
 							Let Nh = minimum number of nodes in an AVL Tree of height h then height of AVL is obtained by using 'n' nodes should be:<br>
-							<span class="image main"><img src="images/minimumHeight.jpg" alt="" /></span><br>
+							<span class="image main"><img src="images/balancedBinaryTrees/minimumHeight.jpg" alt="" /></span><br>
 							</p>
 							<p>AVL Insertion:<br>
 								1) Simple BST insert.<br>
 								2) Fix AVL property from changed node up.<br>
 								How to fix AVL property? ====> By Rotations(constant time operation).
-							<br><span class="image main"><img src="images/rotations.jpg" alt="" /></span><br>
+							<br><span class="image main"><img src="images/balancedBinaryTrees/rotations.jpg" alt="" /></span><br>
 								Suppose X is lowest node violating AVL. Assume right(X) is higher.
-							<br><span class="image main"><img src="images/twoCases.jpg" alt="" /></span><br>
+							<br><span class="image main"><img src="images/balancedBinaryTrees/twoCases.jpg" alt="" /></span><br>
 								Why we looking at the right child? Because we assumed that the right one is higher. In the above figure 'K' represent height of node X. As it is right heavy so Y becomes 'K-1' and so C is 'K-2', node A is 'K-3' because we assumed right heavy is differ by 2.
 
 								
