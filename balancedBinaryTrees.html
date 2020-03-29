@@ -80,21 +80,23 @@
                                 How to fix AVL property? ====> By Rotations(constant time operation).<br/>
 								Basically there are two types of rotations which we can perform on BST those are "Right Rotation" and "Left Rotation". Why those are look at the below image:
                             <br><span class="image main"><img src="images/balancedBinaryTrees/rotation.jpg" alt="" /></span><br/>						
-							From the above figure, why are we doing leftRotation(X) because we are assuming right subtree of X is heavier than left one and in case of RightRotation(Y) assuming left subtree of Y is heavier than right one. I will give you example of each cases can occur while inserting a node into tree.
+							From the above figure, why are we doing leftRotation(X) because we are assuming right subtree of X is heavier than left one and in case of RightRotation(Y) assuming left subtree of Y is heavier than right one. If the node is left heavy we perform rightRotate opertion we respect to the node and if node if right heavy we perform leftRotate operation with respect to the node. I will give you example of each cases can occur while inserting a node into tree.
                             </p>
 							<p>
 							<h4>There are total 4 possible cases can occur while in case of AVL tree insertion.</br>Let A, B and C be an item. Order of how they represent is matter.</h4><br/>
-							<h5>[I] Left Rotate:</h5> We need to perform left rotation of a node when A < B < C. In this case we perform operation leftRotate(A) because balance factor of A is greater than -1.
+							<h5>[I] Left Rotate:</h5> We need to perform left rotation of a node when A < B < C. In this case we perform operation leftRotate(A) because balance factor of A is less than -1.
                             <span class="image main"><img src="images/balancedBinaryTrees/leftRotate.jpg" alt="" /></span>						
 							<h5>[II] Right Rotate: </h5> We need to perform right rotation of a node when A > B > C. In this case we perform operation rightRotate(A) because balance factor of A is greater than 1.
                             <span class="image main"><img src="images/balancedBinaryTrees/rightRotate.jpg" alt="" /></span>
 
-							<h5>[III] Left Right Rotate:</h5> We need to perform left right rotation when A > B < C. In this case we have to perform leftRotate(B) then it will becomes A > C > B now perform rightRotate(A), balance factor of A is also greater than 1.
+							<h5>[III] Left Right Rotate:</h5> We need to perform left right rotation when A > B < C. In this case we have to perform leftRotate(B) then it will becomes A > C > B now perform rightRotate(A), balance factor of A is also less than -1.
                             <span class="image main"><img src="images/balancedBinaryTrees/leftRightRotate.jpg" alt="" /></span>
-							<h5>[IV] Right Left Rotate:</h5> We need to perform right left rotation when A < B > C. In this case we have to perform rightRotate(B) then it will becomes A < C < B now perform leftRotate(A), balance factor of A is also greater than -1.
+							<h5>[IV] Right Left Rotate:</h5> We need to perform right left rotation when A < B > C. In this case we have to perform rightRotate(B) then it will becomes A < C < B now perform leftRotate(A), balance factor of A is also greater than 1.
 							<span class="image main"><img src="images/balancedBinaryTrees/rightLeftRotate.jpg" alt="" /></span>					
+							Hope you get the insertion of AVL-Tree.
 							</p>
-							<p>If you carefully observe from all above four cases we achive the same state, hence we are balanced, unbalanced tree.</p>
+							<p><h3>Deletion of node from an AVL Tree: </h3> Deleting a node is same as that of binary search tree, after removing node we just have to maintain the property of AVL tree.</p>
+							<p>I hope that you have cleared all things now. Usethe <a href="https://github.com/shubham1010/Fun-Projects/tree/master/AVL-Tree">AVL-Tree </a>source code. Thank You!</p>
 								</div>
 							</section>
 
