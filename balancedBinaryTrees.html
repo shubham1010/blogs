@@ -53,7 +53,7 @@
 
 									<span class="image main"><img src="images/balancedBinaryTrees/perfectBinaryTree.jpg" alt="" /></span>
                             <p>This article is about Balanced Binary Search Trees. This blogs covers, What are balanced binary search trees? Why they are important? What problems they resolves? How they are better over binary search tree? and How to implement them?</p>
-                            <p>Prerequisite:<br>
+                            <p><h3>Prerequisite:</h3><br>
                                Binary Search Tree(BST).<br>
                             </p>
                             <p> We all know about Binary Search Tree. We expect operations like Insertion,Searching data i.e. finding predecessor and successor and Deletion should get done in O(lg(n)) time where 'n' is total number of nodes. But in worst case of Binary Search Tree some BST are skew as showed in below figure:<br>
@@ -63,10 +63,10 @@
                                 In skew BST complexity not remains O(lg(n)) for operations as all nodes are either tilted toward left or right side of a node, Here Balanced Binary Search Trees comes in picture. What are balanced binary search trees? They are <a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree">lots of self-balanced binary tree </a> in this blog I'm going to talk about <a href="https://en.wikipedia.org/wiki/AVL_tree">AVL</a> (Adelson, Velskii, and Landi) Tree.
                             </p>
 
-							<p>We called the tree balanced if height h is O(lg(n)).<br>Defination of Height: Length of the longest path always going down i.e. length of longest path from root to the some leaf. Comparision of height between balanced and unbalanced tree BST is shown in the below image:
+							<p>In AVL tree we called the tree balanced if height h is O(lg(n)).<br><h3>Defination of Height:</h3> Length of the longest path always going down i.e. length of longest path from root to the some leaf. Comparision of height between balanced and unbalanced tree BST is shown in the below image:
                             <span class="image main"><img src="images/balancedBinaryTrees/balancedVsNonBalanced.jpg" alt="" /></span><br>
                             Now the question should ask is how do we compute the height of a node???<br> Take max of the height of the children add 1.
-                            Height of a node = max(height(leftChild),height(rightChild)) + 1<br>
+                            </h3>Height of a node = max(height(leftChild),height(rightChild)) + 1</h3><br>
                             Depth of a single node is to be -1. Why -1? => Because the above formula works. Like leaves for example, have two childrens, which are -1 you take the max you add 1 and you get 0 so that just make things works out..
                             </p>
                             <p>Require height of left and right children of every node to differ by at most +1 or -1. For every node, lets make the right side have a height of one larger than the left side.<br>
@@ -74,14 +74,26 @@
                             Let Nh = minimum number of nodes in an AVL Tree of height h then height of AVL is obtained by using 'n' nodes should be:<br>
                             <span class="image main"><img src="images/balancedBinaryTrees/minimumHeight.jpg" alt="" /></span><br>
                             </p>
-                            <p>AVL Insertion:<br>
+                            <p><h3>AVL Insertion:</h3><br>
                                 1) Simple BST insert.<br>
                                 2) Fix AVL property from changed node up.<br>
-                                How to fix AVL property? ====> By Rotations(constant time operation).
-                            <br><span class="image main"><img src="images/balancedBinaryTrees/rotation.jpg" alt="" /></span><br>
-                                Suppose X is lowest node violating AVL. Assume right(X) is higher.
-							Why we looking at the right child? Because we assumed that the right one is higher. In the above figure 'K' represent height of node X. As it is right heavy so Y becomes 'K-1' and so C is 'K-2', node A is 'K-3' because we assumed right heavy is differ by 2.
+                                How to fix AVL property? ====> By Rotations(constant time operation).<br/>
+								Basically there are two types of rotations which we can perform on BST those are "Right Rotation" and "Left Rotation". Why those are look at the below image:
+                            <br><span class="image main"><img src="images/balancedBinaryTrees/rotation.jpg" alt="" /></span><br/>						
+							From the above figure, why are we doing leftRotation(X) because we are assuming right subtree of X is heavier than left one and in case of RightRotation(Y) assuming left subtree of Y is heavier than right one. I will give you example of each cases can occur while inserting a node into tree.
                             </p>
+							<p>
+							<h3>Let A, B and C be an item. Order of how they represent is matter.</h3><br/>
+							<h2>[I] Left Rotate:</h2> We need to perform left rotation of a node when A < B < C. In this case we perform operation leftRotate(A) because balance factor of A is greater than -1.
+                            <br><span class="image main"><img src="images/balancedBinaryTrees/leftRotate.jpg" alt="" /></span><br/>						
+							<h2>[II] Right Rotate: </h2> We need to perform right rotation of a node when A > B > C. In this case we perform operation rightRotate(A) because balance factor of A is greater than 1.
+                            <br><span class="image main"><img src="images/balancedBinaryTrees/rightRotate.jpg" alt="" /></span><br/>					
+							<h2>Left Right Rotate:</h2> We need to perform left right rotation when A > B < C. In this case we have to perform leftRotate(B) then it will becomes A > C > B now perform rightRotate(A), balance factor of A is also greater than 1.
+                            <br><span class="image main"><img src="images/balancedBinaryTrees/leftRightRotate.jpg" alt="" /></span><br/>					
+							<h2>Right Left Rotate:</h2> We need to perform right left rotation when A < B > C. In this case we have to perform rightRotate(B) then it will becomes A < C < B now perform leftRotate(A), balance factor of A is also greater than -1.
+							<br><span class="image main"><img src="images/balancedBinaryTrees/rightLeftRotate.jpg" alt="" /></span><br/>					
+							</p>
+							<p>If you carefully observe from all above four cases we achive the same state, hence we are balanced, unbalanced tree.</p>
 								</div>
 							</section>
 
