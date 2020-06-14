@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Russian Peasant Multiplication</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Blog</strong> <span>by Shubham Jagdhane</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="https://shubham1010.github.io/about-myself">About</a></li>
+				<!--			<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					<!--
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					-->
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Russian Peasant Multiplication</h1>
+									</header>
+									<p>
+                  Hi guys, In this blog we are going to talk about the multiplication of two number using any programming language but twist is you are not allow to use the asterix symbol i.e *.
+									</p>                  
+									<p>
+                  When I was in first year of my MCA course,my teacher write a function on a board and he told us that figure out what operation does this function is performing. When I complete with that function I was shocked, the function is performing an multiplication of two numbers using only addition. I was thinking that there are lots more things that I should know. Some colleges don't even teach that too I guess, but I'm lucky that at least I have a best teachers. <br />
+                 
+                 Multiplication using an Addition: <br />
+                 
+                 Assuming that 'a' and 'b' are belongs to set of natural numbers.<br/>
+
+                 mult(a, 0) = 0 <br />
+                 mult(a, 1) = a <br />
+                 mult(a, b) = mult(a+a, b-1) <br />
+
+                 The function 'mult' is taking two numbers and we are adding first number until the second number becomes equal to one. We can decrease recursion calls by checking if 'a' is smaller than 'b' then we set 'b = a' and 'a = b'.
+									</p>
+									<p>
+                    When I was reading about the bitwise operator coding competetive platform, I hit with the question that you have to perform multiplication of two number without using '*' symbol. I was thinking that if I don't have to use '*' then I could use '+' symbol. The above approach of multiplication is the only approach I knew at that time. As I was reading further I hit with the <a href = "https://tinyurl.com/russianpeasantmultiplication">Russian Peasant Multiplication</a>, and volla I got another method to perform multiplication of two numbers. The idea behind this method is lets say you have given two number 'a' and 'b' you have to choose either of between them to make double it or to make is half. Let say that you decided to make 'a' double each time and 'b' to make if half each time side by side we are adding 'a' each time when we make it double but the condition is if 'b' is odd only then we can include those number of "a's" value into our multiplication sum. <br />
+                    Example: <br />
+                    a = 13 and b = 6 (as 6 is not odd so we are not adding 13 into cumulative sum) <br />
+                    13 * 2 = 26,  6/2 = 3 (26 is added into cumulative sum) <br />
+                    26 * 2 = 52,  3/2 = 1 (52 is added into cumulative sum) <br />
+                    Ans = 26 + 52 = 78 <br /> <br />
+
+                    For more details you can see <a href = "http://mathforum.org/dr.math/faq/faq.peasant.html">here </a>.
+                  </p>
+									<p>
+                    As we have seen the idea behind <a href = "https://tinyurl.com/russianpeasantmultiplication">Russian Peasant Multiplication</a> but we have used the '*' operator to for multiplying number by 2 and '*' operator is not allow us to used. So now we are gonna do is as we know that we are performing operation on bits and if we right shift of a number by 1 it is nothing but we are dividing number by 2 and if we performing left shift of a number by 1 it means we are multiplying a number by 2. Representing the above example without using '*' operator. <br />
+                    Example: <br />
+                    a = 13 and b = 6 (as 6 is not odd so we are not adding 13 into cumulative sum) <br />
+                    13 (left shift) 2 = 26,  6 (right shift) 2 = 3 (26 is added into cumulative sum) <br />
+                    26 (left shift) 2 = 52,  3 (right shift) 2 = 1 (52 is added into cumulative sum) <br />
+                    Ans = 26 + 52 = 78 <br /> <br />
+                   
+                    And we are done.                    
+									</p>
+                  <p> 
+                    Lets implement this logic: 
+                    <span class="image main">
+                      <img src="images/rpa/codeRPA.png" alt="" />
+                    </span>
+                  </p>
+									<p>Thank You!</p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+				<!--				<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+				-->
+								<li><a href="https://github.com/shubham1010" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/shubham-jagdhane/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Shubham Jagdhane. All right reserved.</li><li>Design: <a href="https://shubham1010.github.io/about-myself">Shubham Jagdhane</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
