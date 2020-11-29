@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Image Rendering</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Blog</strong> <span>by Shubham Jagdhane</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="https://shubhamjagdhane.github.io/about-myself">About</a></li>
+				<!--			<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li> -->
+						</ul>
+					<!--
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					-->
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Image Rendering</h1>
+									</header>
+									<p>
+                  Well Hello, in this blog we are going to learn about how we can upload image, how we can see image preview and then how we display the image with other data using HTML, CSS and <a href="https://stimulusjs.org/">Stimulusjs</a> framework. Stimulusjs is a modest JavaScript framework for the HTML you already have, if you don't know about it you can learn from <a href="https://stimulusjs.org/handbook/introduction">here</a>. For this tutorial I'm assuming you are familier with HTML, CSS and javascript.
+									</p>                  
+									<p>
+                   <span class="image main">
+                      <img src="images/imageRendering/goal.png" alt="" />
+                    </span>
+                    So this is our goal. What we have to do is we accept name, phone (10 digit), city from dropdown list and we ask user to attach image. When we click to "add" the information should get display on the same page itself as.
+									</p>
+									<p>
+                  First we are builing our UI using HTML, so inserting textboxes, drop-down list and buttons are very simple thing if you are familier with HTML. As we are set up with our UI lets make it workable with javascript code. <br />
+                  As we are using Stimulusjs, all our javascript code will go into src/controllers/filename_controller.js file this is naming conventional for writting javascript file in Stimulusjs. Our HTML, CSS code is in public/ directory.
+
+									</p>
+                  <p> 
+                  Consider an example, Given an arrays, find the number of duplicate element.
+                  <dl>
+                  <dd> A: 55 88 42 15 33 42 57 15  </dd>
+                  </dl>
+                  A brute force algorithm for this problem is to start with each element in A and search from that element upto the end of an array. This takes O(N<sup>2</sup>) time since for each of N elements in A, we need to do an O(N) search  again (1 + 2 + 3 + ... + N = (N*(N+1))/2 i.e. N<sup>2</sup>). The BCR is O(N), because we know we will have to look at each element at least once. So our chart will be: <br />
+                  <ul> 
+                  <li> Brute Force:       O(N<sup>2</sup>)</li>
+                  <li> Optimal Algorithm: ?</li>
+                  <li> BCR:               O(N)</li>
+                  </ul>
+                  What is between O(N<sup>2</sup>) and O(N)? Lots of things, We could theoretically have an algorithm that's O(N*log(log(log(log(N))))). Well we are considering only standard Big-O complexities as O(log N), O(N), O(N*log N), O( N<sup>2</sup>) or O(N).
+                  </p>
+                  <p>
+                  Most likely, we're driving towards an O(N) algorithm or an O(N log N) algorithm. What does that tell us?
+If we imagine our current algorithm's runtime as O(N x N), then getting to O(N) or O(N x log N) might mean reducing that second O(N) in the equation to O(1) or O( log N). This is one way that BCR can be useful. We can use the runtimes to get a "hint" for what we need to reduce. That second O(N) comes from searching. What if we sort(merge sort) an array then all duplicate elements will be one after other and to find them we just need O(1). So total time required will be O(N logN) + O(N) = O(N logN). Our chart will be: <br />
+                  <ul> 
+                  <li> Brute Force:        O(N<sup>2</sup>)</li>
+                  <li> Improved Algorithm: O(N logN)</li>
+                  <li> Optimal Algorithm:  ?</li>
+                  <li> BCR:                O(N)</li>
+                  </ul>
+                  Can we do even better? Doing better likely means reducing that O(log N) to 0(1).<br/>
+                  What if we keep it track if each element in an array such as {key, value} where key is number in an array and value is how many times that number occuring. We traverse an array and we check whether the element is already seen if it is we just increament the existing value by 1 else we assign value to 1. Assuming we have data structure which find elements O(1) because that's the idea behind reducing the time. Then we print only those number which are having value greater than 1 this would take O(N) time complexity but as we are keeping the track of element this might take O(N) space complexity. So our chart will be:
+                  <ul> 
+                  <li> Brute Force:        O(N<sup>2</sup>)</li>
+                  <li> Improved Algorithm: O(N logN)</li>
+                  <li> Optimal Algorithm:  O(N) with O(N) space</li>
+                  <li> BCR:                O(N)</li>
+                  </ul>
+
+                  As we algorithms achieved complexity to BCR, we cannot further improve this algorithm. But as we have used O(N) space can we do something to improve our space complexity? For each element A[i], go to the array element whose index is A[i]. That means select A[A[i]] and mark -A[A[i]]. Continue this process until we encounter the element whose value is already negated. If one such element exist then we say duplicate elements exist in the given array. As here we are not using any space so we reduced our space to O(1). Assumption for this method is, array elements are positive, element range is not in 0 to (N-1) then it may give exceptions. As this will be the restriction to our input so our final chart will be:
+                  <ul> 
+                  <li> Brute Force:        O(N<sup>2</sup>)</li>
+                  <li> Improved Algorithm: O(N logN)</li>
+                  <li> Optimal Algorithm:  O(N) with O(N) space</li>
+                  <li> BCR:                O(N)</li>
+                  </ul>
+                  </p>
+									<p>Hope you cleared now how to make algorithms more efficient upto BCR.<br/>Thank You!</p>
+
+                  <h5>References:
+                  <ul> 
+                  <li><a href="http://www.crackingthecodinginterview.com/">Cracking The Coding Interview</a></li>
+                  <li><a href="https://www.docdroid.net/ZPfHmS5/data-structures-and-algorithms-narasimha-karumanchi-pdf">Data Structures and Algorithms</a></li>
+                  </ul>
+                  </h5>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+				<!--				<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+				-->
+								<li><a href="https://github.com/shubhamjagdhane" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/shubham-jagdhane/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Shubham Jagdhane. All right reserved.</li><li>Design: <a href="https://shubhamjagdhane.github.io/about-myself">Shubham Jagdhane</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

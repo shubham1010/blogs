@@ -1,1 +1,1 @@
-Go to https://shubham1010.github.io/blogs to check out my blogs.
+Go to https://shubhamjagdhane.github.io/blogs to check out my blogs.
